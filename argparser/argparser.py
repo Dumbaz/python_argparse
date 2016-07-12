@@ -3,6 +3,17 @@
 from argparse import ArgumentParser
 import sys
 
+
+def interpret_a(address):
+    print(address)
+
+def interpret_file(file):
+    with open(file) as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                yield(line)
+
 parser = ArgumentParser()
 
 parser.add_argument("-a" , help="directly input IPs seperated by spaces")
